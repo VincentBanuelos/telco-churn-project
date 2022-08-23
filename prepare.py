@@ -6,6 +6,10 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 
 def prep_telco(df):
+    '''
+    Prepares, tidys, and cleans the data 
+    so that it is ready for exploration and analysis 
+    '''
 
     df['total_charges'] = pd.to_numeric(df['total_charges'], errors='coerce')
     df['tenure'].astype(float)
@@ -58,7 +62,9 @@ def prep_telco(df):
 
 
 def my_train_test_split(df, target):
-    
+    '''
+    take in a DataFrame and return train, validate, and test DataFrames.
+    '''
     train, test = train_test_split(df, test_size=.2, random_state=123, stratify=df[target])
     train, validate = train_test_split(train, test_size=0.3, random_state=123, stratify=train[target])
     
