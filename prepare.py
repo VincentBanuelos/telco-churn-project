@@ -16,7 +16,6 @@ def prep_telco(df):
     df['is_male'] = df.gender.map({'Male': 1, 'Female': 0})
     df.drop(columns='gender', inplace=True)
     df['multiple_lines'] = df.multiple_lines.map({'Yes': 1, 'No': 0, 'No phone service' : 0})
-    df['number_relationships'] = df['dependents'] + df['partner']
 
     YN_features = ['churn', "paperless_billing","phone_service","dependents","partner"]
     for i in YN_features:
@@ -31,6 +30,8 @@ def prep_telco(df):
                         'contract_type', \
                         'internet_service_type', \
                         'payment_type']] == 'Yes').sum(axis=1)
+    
+    df['number_relationships'] = df['dependents'] + df['partner']
 
     dummy_df = pd.get_dummies(df[['multiple_lines', \
                               'online_security', \
