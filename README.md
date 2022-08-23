@@ -38,15 +38,15 @@ Goal 3: Deliver a report that a non-data scientist can read through and understa
 
 ## <a name="planning"></a>Planning:
 
-- Create README.md with data dictionary, project and business goals, come up with initial hypotheses.
+- Create README.md with data dictionary, project and business goals, and come up with initial hypotheses.
 - Acquire data from the Codeup Database and create a function to automate this process. Save the function in an acquire.py file to import into the Final Report Notebook.
-- Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to automate the process, store the function in a prepare.py module, and prepare data in Final Report Notebook by importing and using the funtion.
+- Clean and prepare data for the first iteration through the pipeline, MVP preparation. Create a function to automate the process, store the function in a prepare.py module, and prepare data in Final Report Notebook by importing and using the function.
 - Clearly define at least two hypotheses, set an alpha, run the statistical tests needed, reject or fail to reject the Null Hypothesis, and document findings and takeaways.
 - Establish a baseline accuracy and document well.
 - Train four different classification models.
 - Evaluate models on train and validate datasets.
-- Choose the model with that performs the best and evaluate that single model on the test dataset.
-- Create csv file with the measurement id, the probability of the target values, and the model's prediction for each observation in my test dataset.
+- Choose the model that performs the best and evaluate that single model on the test dataset.
+- Create CSV file with the measurement id, the probability of the target values, and the model's prediction for each observation in my test dataset.
 - Document conclusions, takeaways, and next steps in the Final Report Notebook.
 
 [[Back to top](#top)]
@@ -108,19 +108,29 @@ You will need your own env.py file with database credentials then follow the ste
 
 ## <a name="conclusion"></a>Conclusion and Next Steps:
 
+- Exploration of Data showed that the following items showed the following features have at least some relationship to churn.
+    - Dependents
+    - Partners
+    - Whether a customer is a senior citizen
+    - Number of add-ons a customer has
 - Takeaways
-    - Customers who have dependents churned at a much lower rate those those who did not
+    - Customers who have dependents churned at a much lower rate than those who did not
     - Customers with partners also churn at a lower rate than those who did not.
     - In addition to customers with either a dependent or partner churning less, customers with both a dependent and a partner churn more so than those who have either or.
-    - Senior citizens are at a more likely rate to churn than non senior citizens.
-    - The more add ons that a customer has included in their plan the less likely they are to churn.
+    - Senior citizens are at a more likely rate to churn than non-senior citizens.
+    - The more add-ons that a customer has included in their plan the less likely they are to churn.
     
 - Recommendations
-    - Seeing that customers that have both dependents and a partner churn at a lower rate, perhaps we could implement promotions that encourage clients to add partners and dependents to account with the added bonus that the more people they add the cheaper the overall plan will be in comparison to have multiple individual plans.
+    - Seeing that customers that have both dependents and a partner churn at a lower rate, perhaps we could implement promotions that encourage clients to add partners and dependents to account with the bonus that the more people they add the cheaper the overall plan will be in comparison to have multiple individual plans.
     - A promotion that could also be implemented could include a plan that offers different tiers of add-ons for a lower price when bundled. Thus making a customer more dependent on those add-ons, i.e online_security, tech_support, etc.
 
+- Model
+    - The model's performance can be summarized as follows
+        - Accuracy of 75% on in-sample (train), 77% on out-of-sample data (validate), and an accuracy of 76% on the test data.
+
 - Next Steps
-    - Following this initial project, I would like to create a more refined model. Whether it is through running different groups of features through my current model, tuning the hyper parameters or both.
+    - Following this initial project, I would like to create a more refined model. Whether it is through running different groups of features through my current model, tuning the hyperparameters or both.
+    - As well as creating more python files that store functions so as to make the final report less filled by code and easier to read.
     
     
 [[Back to top](#top)]
